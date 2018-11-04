@@ -9,9 +9,9 @@ const todoList = (state=[], action) => {
                 todo({}, action)
             ]
         case C.DEL_ITEM:
-            return state.filter(c => c.id!=action.id)
+            return state.filter(c => c.id!==action.id)
         case C.TOGGLE_ITEM:
-            return state.map(c => todo(c, action)
+            return state.map(c => todo(c, action))
         default: return state
     }
 }

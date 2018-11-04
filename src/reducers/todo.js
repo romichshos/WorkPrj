@@ -1,4 +1,4 @@
-import C from '/constants.js';
+import C from '../constants.js';
 
 const todo = (state={}, action) =>{
     switch (action.type){
@@ -11,8 +11,8 @@ const todo = (state={}, action) =>{
         case C.TOGGLE_ITEM:
             return (state.id===action.id)?{
                 ...state,
-                completed: (action.completed=true)? false: true
-            }
+                completed: action.completed===true? false: true
+            }: state
         default: return state
     }
 
