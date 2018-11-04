@@ -1,4 +1,4 @@
-import C from '/constants.js'
+import C from '../constants.js'
 
 var nextId = 0;
 
