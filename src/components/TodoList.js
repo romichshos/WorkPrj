@@ -7,8 +7,8 @@ import { ListGroup } from 'react-bootstrap';
 const TodoList = ({todos, toggleTodo})=> (
     <ListGroup>
         {todos.map(todo =>
-        <Todo key={todo.id} {...todo} onClick={toggleTodo(todo.id)}/>
-        )
+          <Todo key={todo.id} {...todo} onClick={toggleTodo(todo.id)}/>
+         )
         }
      </ListGroup>
 )

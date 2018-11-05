@@ -11,7 +11,7 @@ const todo = (state={}, action) =>{
         case C.TOGGLE_ITEM:
             return (state.id===action.id)?{
                 ...state,
-                completed: action.completed===true? false: true
+                completed: action.completed!==true
             }: state
         default: return state
     }
