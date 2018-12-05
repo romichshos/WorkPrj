@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { addItem } from  '../actions';
-import { Button, FormGroup, ControlLabel, FormControl, HelpBlock } from 'react-bootstrap';
+import { Button, FormGroup, FormControl } from 'react-bootstrap';
 
 const AddTodo = ({ dispatch }) => {
    let input;
@@ -13,18 +13,15 @@ const AddTodo = ({ dispatch }) => {
                if (!input.value.trim()) {
                    return;
                }
-                dispatch(addItem(input.value));
+                dispatch(addItem(null,input.value));
                 input.value = '';
-             }
-            }
+              }}
             >
                 <FormGroup
                     controlId="formBasicText"
                     //validationState={this.getValidationState()}
                 >
-                    <ControlLabel>Enter TODO</ControlLabel>
-                    <FormControl inputRef={ref => { input = ref; }} />
-                    <HelpBlock>Validation is based on string length.</HelpBlock>
+                 <FormControl inputRef={ref => { input = ref; }} />
                 </FormGroup>
                 <Button bsStyle="primary" type="submit">Add Todo</Button>
             </form>
