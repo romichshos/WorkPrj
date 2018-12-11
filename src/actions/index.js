@@ -1,6 +1,6 @@
 import C from '../constants.js'
 
-var nextId = 0;
+let nextId = 0;
 
 export const addItem =(id,text)=>({
     type: C.ADD_ITEM,

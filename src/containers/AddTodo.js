@@ -4,7 +4,7 @@ import { addItem } from  '../actions';
 import { Button, FormGroup, FormControl } from 'react-bootstrap';
 
 const AddTodo = ({ dispatch }) => {
-   let input;
+   let input;// = React.createRef();
 
     return (
         <div>
@@ -13,20 +13,22 @@ const AddTodo = ({ dispatch }) => {
                if (!input.value.trim()) {
                    return;
                }
-                dispatch(addItem(null,input.value));
+                dispatch(addItem(input.value));
                 input.value = '';
               }}
             >
                 <FormGroup
                     controlId="formBasicText"
-                    //validationState={this.getValidationState()}
+                //    validationState={input.value===null?'':input.value.length>10?'success':input.value.length>5? 'warning':input.value.length>0?'error':null}
                 >
-                 <FormControl inputRef={ref => { input = ref; }} />
+                    <FormControl inputRef={ref => { input = ref; }} />
                 </FormGroup>
                 <Button bsStyle="primary" type="submit">Add Todo</Button>
             </form>
         </div>
     )
 }
+
+
 
 export default connect()(AddTodo)
