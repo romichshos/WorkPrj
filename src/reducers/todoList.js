@@ -1,4 +1,4 @@
-import todo from '../reducers/todo.js';
+//import todo from '../reducers/todo.js';
 import C from '../constants.js';
 
 const todoList = (state=[], action) => {
@@ -6,12 +6,18 @@ const todoList = (state=[], action) => {
         case C.ADD_ITEM:
             return [
                 ...state,
-                todo({}, action)
+                { id: action.id,
+                  text: action.text,
+                  completed: false
+                }
             ]
         case C.DEL_ITEM:
             return state.filter(c => c.id!==action.id)
         case C.TOGGLE_ITEM:
-            return state.map(c => todo(c, action))
+            return state.map(
+                todo =>
+                    todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
+            )
         default: return state
     }
 }

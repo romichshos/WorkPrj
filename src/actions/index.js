@@ -1,10 +1,11 @@
+// ACTION CREATORS
 import C from '../constants.js'
 
-let nextId = 0;
+let nextTodoId = 0;
 
 export const addItem =(id,text)=>({
     type: C.ADD_ITEM,
-    id: nextId++,
+    id: nextTodoId++,
     text: text,
     completed: false
 })
