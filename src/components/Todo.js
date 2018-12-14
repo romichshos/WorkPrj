@@ -11,6 +11,7 @@ const Todo = ({onClick, completed, text})=> (
 
 )
 
+
 Todo.PropTypes = {
     onClick: PropTypes.func.isRequired,
     text: PropTypes.string.isRequired,

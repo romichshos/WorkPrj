@@ -2,6 +2,7 @@ import React from 'react';
 import AddTodo from '../containers/AddTodo';
 import Link from '../containers/Link';
 import VisibleTodoList  from "../containers/VisibleTodoList";
+import Footer from './Footer';
 import { Grid, Row, Col, Label } from 'react-bootstrap';
 
 

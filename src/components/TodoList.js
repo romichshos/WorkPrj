@@ -4,21 +4,13 @@ import PropTypes from 'prop-types';
 import { ListGroup } from 'react-bootstrap';
 
 
-const TodoList = ({todos, toggleItem})=> (
+const TodoList = ({todos=[], toggleItem})=> (
    <ListGroup>
        {todos.map(todo => (
            <Todo key={todo.id} {...todo} onClick={() => toggleItem(todo.id)} />
        ))}
    </ListGroup>
 )
-
-    TodoList.defaultProps = {
-     todos:[{
-        id: -1,
-        completed: false,
-        text: "Default"
-     }]
-    }
 
     TodoList.PropTypes = {
         todos: PropTypes.arrayOf(

@@ -4,7 +4,7 @@ import { addItem } from  '../actions';
 import { Button, FormGroup, FormControl } from 'react-bootstrap';
 
 const AddTodo = ({ dispatch }) => {
-   let input;// = React.createRef();
+   let input;
 
     return (
         <div>
@@ -28,7 +28,6 @@ const AddTodo = ({ dispatch }) => {
         </div>
     )
 }
-
 
 
 export default connect()(AddTodo)
